@@ -1,0 +1,852 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #DBDBDB;
+    font-family: Arial, sans-serif; /* Fallback */
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, .btn, .footer-nav {
+    font-family: 'DM Serif Display', serif;
+}
+
+/* Header / Hero Section */
+.hero {
+    background-color: #4D3053;
+    min-height: 80vh; /* Ajusté pour écran classique au lieu de 833px fixe */
+    height: 100vh;
+    border-radius: 0 0 22px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: #FFF;
+    position: relative; /* Indispensable pour que le bloc s'aligne par rapport au header */
+    overflow: visible;
+}
+
+/* Ajoute juste ça à la fin de ton fichier style.css */
+html { scroll-behavior: smooth; } /* Pour que la page descende doucement */
+
+.btn-qui-suis-je { margin: 40px auto; width: 250px; } /* Pour l'espace sous ton nom */
+
+.main-wrapper {
+    /* Largeur exacte de ton rideau pour créer tes lignes rouges verticales */
+    width: 1299px; 
+    max-width: 95vw; /* Sécurité pour les petits écrans */
+    margin: 0 auto;  /* Centre tout parfaitement */
+    padding: 0;      /* On enlève les marges internes pour coller aux bords */
+}
+
+/* On gère l'espace entre les sections sans créer de vide énorme */
+.bio-section, .work-section, .projects-section {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* Pour ton titre "Je suis" et "Mon travail" */
+
+    h2 {
+        font-family: 'DM Serif Display', serif;
+        color: #4D3053;
+        font-size: 40px; /* On harmonise la taille */
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+
+.bio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px; /* Espace entre les tags et le texte */
+}
+
+.search-status-box {
+    position: absolute !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    bottom: 90px !important; /* Force la position basse */
+    left: 50% !important;
+    /* On combine ton centrage ET on annule toute autre transformation du script */
+    transform: translateX(-50%) translateY(0) !important; 
+    transition: none !important; /* On empêche le script de l'animer si ça crée un bug */
+    
+    width: 60%;
+    max-width: 900px;
+    background: #6F5774;
+    border-radius: 22px;
+    padding: 25px 40px;
+    display: flex !important; /* Change block en flex pour align-items et justify-content */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 999; /* On s'assure qu'il passe devant tout le reste du header */
+}
+
+.search-status-box p {
+    color: #ffffff; /* Ton violet foncé pour la lisibilité */
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.search-status-box strong {
+    color: #ffffff;
+    text-decoration: underline; /* Pour faire ressortir les dates */
+}
+
+.btn-cv-status {
+    background: #4D3053;
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.btn-cv-status:hover {
+    transform: scale(1.05);
+}
+
+.bio-tags span {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1.5px solid #6F5774; /* Couleur prune de tes boutons */
+    border-radius: 50px; /* Forme pilule */
+    background-color: #DBDBDB;
+    color: #333;
+    font-size: 16px;
+    font-family: Arial, sans-serif; /* Pour rester lisible comme sur ton exemple */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 5rem;
+}
+
+/* Boutons Navigation */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem; /* Réduit par rapport au 32px pour laptop */
+    border-radius: 15px;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px 30px;
+}
+
+.btn-outline {
+    border: 3px solid #6F5774;
+    color: #FFF;
+}
+
+.btn-filled {
+    background: #6F5774;
+    color: #FFF;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 8vw, 5rem); /* Taille fluide selon l'écran */
+    text-align: center;
+    font-weight: 400;
+    margin-top: 2rem;
+}
+
+.container {
+    max-width: 1299px; /* On l'aligne sur la largeur de ton rideau */
+    margin: 0 auto;
+    padding: 20px 0;   /* On réduit l'espace en haut/bas pour que ce soit moins vide */
+}
+
+/* Bio Section */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* L'image prend un peu moins de place que le texte */
+    gap: 50px; /* L'espace entre l'image et le texte */
+    width: 100%; /* Elle s'étale sur tout le wrapper */
+    align-items: start;
+}
+
+.bio-image-placeholder {
+    background: #C4C4C4;
+    width: 85%;
+    background-image:url('IMAGE/cv.png') ;
+    object-fit: cover;
+    background-position: center -50px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    height: 300px;
+    border-radius: 15px;
+    border: 1px solid #4D3053;
+}
+
+/* =========================================
+   bouton de la section je suis
+   ========================================= */
+
+
+.btn-lien {
+    background-color: #4D3053;   /* Prune foncé */
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    
+    border: none;
+    border-radius: 17px;         /* Le changement majeur : coins moins ronds (17px) */
+    padding: 10px 25px;          /* Épaisseur du bouton */
+    
+    text-decoration: none;
+    /* Positionnement */
+    margin: 3px;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+
+.btn-lien:hover {
+    background-color: #6F5774;   /* Devient plus clair */
+    transform: translateY(-5px); /* Monte légèrement */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Petite ombre */
+}
+
+/* =========================================
+   SECTION MON TRAVAIL (LE RIDEAU)
+   ========================================= */
+   .work-section h2 {
+    font-size: 2.5rem;
+    color: #4D3053;
+    margin-bottom: 2rem;
+}
+
+/* LE CONTENEUR (Largeur 1299px via le wrapper) */
+.curtain-container {
+    width: 100%;
+    height: 456px;
+    border-radius: 22px;
+    border: 3px solid #4D3053;
+    background: #DBDBDB;
+    position: relative;
+    overflow: hidden; /* Garde tout à l'intérieur */
+}
+
+/* LES DEUX VOLETS PRUNE */
+.curtain-side {
+    position: absolute;
+    top: 0;
+    width: 50.1%; /* Se rejoignent pile au milieu */
+    height: 100%;
+    background-color: #4D3053;
+    transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+    z-index: 5;
+}
+.curtain-side.left { left: 0; }
+.curtain-side.right { right: 0; }
+
+/* LE LOGO (Fixe au centre de la jointure) */
+.curtain-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; /* Ajuste selon ton logo */
+    z-index: 10;
+    transition: opacity 1;
+
+    transition: opacity 0.3s ease 1.2s; 
+}
+
+/* QUAND LE RIDEAU EST OUVERT */
+.curtain-container.open .curtain-logo {
+    opacity: 0;
+    /* PAS DE DÉLAI À L'OUVERTURE : 
+       Il doit disparaître tout de suite dès que les volets s'écartent 
+    */
+    transition: opacity 0.1s ease 0s;
+}
+
+/* CONTENU DERRIÈRE (Visible quand .open est ajouté) */
+.project-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Coupe tout ce qui dépasse */
+    border-radius: 18px;
+    gap: 20px;
+    z-index: 1;
+}
+
+.project-img {
+    /* On la sort du flux normal pour la plaquer en "fond d'écran" */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* C'EST LA COMMANDE MAGIQUE QUE TU CHERCHES : */
+    object-fit: cover; 
+    /* Centre l'image pour que la coupe se fasse équitablement sur les bords */
+    object-position: center center;
+    /* On la met derrière le texte et le bouton */
+    z-index: -1;
+    /* Petite transition fluide si tu l'as pas déjà */
+    transition: opacity 0.2s ease-in-out;
+
+}
+img[src*="kerAmorR"] {
+    /* 1er chiffre (50%) : Horizontal (Centre)
+       2ème chiffre (20%) : Vertical (C'est lui qu'il faut changer !)
+       
+       - 0%   = On voit le tout HAUT de l'image
+       - 50%  = On voit le CENTRE
+       - 100% = On voit le tout BAS
+       
+       Essaie 20% ou 30% pour remonter le téléphone et voir le bas.
+    */
+    object-position: 50% 20%; 
+    
+    /* Si tu veux zoomer encore plus, tu peux ajouter ça : */
+    /* transform: scale(1.1); */
+}
+
+/* 3. Réglage SPÉCIAL pour Lady (Design) */
+img[src*="Lady3"] {
+    /* Là on veut voir le haut de l'affiche, donc 0% en vertical */
+    object-position: 50% 0%; 
+}
+
+/* 4. Réglage pour la Vidéo (si besoin) */
+img[src*="aco-R"] {
+    object-position: center center;
+}
+
+
+
+
+
+.img-ker-armor { 
+    /* EXPLICATIONS DES CHIFFRES :
+       1er (-50px) : Gauche/Droite (Horizontal)
+       2ème (-20px) : Haut/Bas (Vertical) -> CHANGE CELUI-LÀ !
+           - Si tu mets un chiffre POSITIF (ex: 20px), l'image DESCEND.
+           - Si tu mets un chiffre NÉGATIF (ex: -80px), l'image MONTE.
+    */
+    background: url('IMAGE/UIUXdesign/KerArmorR.png') -50px -20px / 130% auto no-repeat;
+    
+    background-color: #DBDBDB;
+}
+
+/* OUVERTURE */
+.curtain-container.open .curtain-side.left { transform: translateX(-100%); }
+.curtain-container.open .curtain-side.right { transform: translateX(100%); }
+.curtain-container.open .curtain-logo { opacity: 0; } /* Cache le logo à l'ouverture */
+
+.category-tag {
+    position: absolute;
+    top: -22px; /* Ajuste pour que ce soit pile au milieu de la bordure */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #DBDBDB;
+    border: 3px solid #4D3053; /* Même bordure que le cadre */
+    padding: 8px 45px;
+    border-radius: 50px;
+    z-index: 20; /* Toujours au-dessus des volets */
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* On s'assure que le wrapper laisse de la place en haut pour l'étiquette */
+.slider-wrapper {
+    margin-top: 40px; 
+    position: relative;
+    width: 100%;
+}
+
+.btn-view-projects {
+    position: absolute; /* Il se détache du flux pour se placer sur l'image */
+    top: 90%;           /* Centrage vertical */
+    left: 50%;          /* Centrage horizontal */
+    transform: translate(-50%, -50%); /* Ajustement pour un centrage parfait */
+}
+
+.btn-view-projects {
+    /* Style de l'arrière-plan violet */
+    width: 200px;
+    height: 45px;
+    background: #6F5774;
+    border-radius: 51px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    
+    /* Style du texte (Typography) */
+    color: #FFF;
+    font-family: "DM Serif Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    
+    /* Centrage du texte dans le bouton */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.2s ease;
+}
+
+.btn-view-projects:hover {
+    transform: scale(1.05);
+}
+
+
+.software-marquee {
+    /* Élargit la bannière à la taille de l'écran */
+    width: 100vw; 
+    
+    /* La replace pile au centre pour compenser les marges du parent */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+
+
+margin-top: 80px;    /* Espace avec le rideau en haut */
+margin-bottom: 80px; /* Espace avec "Mes derniers projets" en bas */
+
+    height: 80px;
+    background-color: #4D3053;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    /* On augmente la vitesse si nécessaire, ici 20s */
+    animation: scroll-left 25s linear infinite; 
+}
+
+.marquee-content span {
+    font-family: "DM Serif Display", serif;
+    color: #FFFFFF;
+    font-size: 28px;
+    text-transform: uppercase;
+    padding: 0 40px; /* Plus d'espace entre les mots */
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #6F5774;
+    border-radius: 50%;
+    flex-shrink: 0; /* Empêche le point de s'écraser */
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+/* =========================================
+   SECTION MES DERNIERS PROJETS (LA GRILLE)
+   ========================================= */
+/* SECTION PARENTE */
+
+
+/* --- SECTION PROJETS (VERSION ACCUEIL : 3 Projets) --- */
+
+.project-card-link {
+    display: block;       /* Transforme le lien en bloc solide */
+    width: 100%;          /* Prend toute la place disponible */
+    max-width: 360px;     /* Mais ne dépasse pas la taille de ta carte */
+    text-decoration: none;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+
+/* --- CARTES --- */
+.project-box {
+    width: 100%;
+    max-width: 360px;
+    height: 320px;
+    border-radius: 22px;
+    box-shadow: 0 4px 10px rgba(111, 87, 116, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-color: #FFFFFF; /* Fond visible si image ne charge pas */
+}
+
+.project-card-link:hover .project-box {
+    transform: scale(1.03);
+}
+
+/* --- TAGS --- */
+.project-tag {
+    position: absolute;
+    top: 15px;
+    height: 30px;
+    background: #6F5774;
+    border-radius: 51px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: "DM Serif Display", serif;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    z-index: 10;
+}
+
+.tag-uni {
+    left: 15px;
+    width: 100px;
+}
+
+.tag-year {
+    right: 15px;
+    width: 60px;
+}
+
+/* --- IMAGES SPÉCIFIQUES --- */
+/* ATTENTION : J'ai enlevé le "../" au début car style.css est à la racine */
+/* J'ai mis 'center/cover' pour que l'image s'adapte toute seule à la nouvelle taille */
+.img-302 { 
+    background-image: url('IMAGE/UIUXdesign/302.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.img-ker-armor { 
+    background: url('IMAGE/UIUXdesign/KerArmor.png') -130px center / 140% auto no-repeat;
+    background-color: #DBDBDB;
+   
+}
+
+.img-lady2 { 
+    background: url('IMAGE/design-graphique/Lady2.png') -0.2px 0.1px / 158%  auto no-repeat;
+    background-color: #F0C0C3;
+}
+
+
+.cta-container {
+    display: flex;
+    justify-content: center; /* Centre le bouton horizontalement */
+    margin-top: 50px;      /* Optionnel : pour le faire chevaucher un peu le bas du rideau */
+    position: relative;
+    z-index: 100;           /* Pour qu'il soit bien au-dessus de tout */
+    padding-bottom: 50px;   /* Espace avec la grille de projets */
+}
+
+.btn-voir {
+    /* Reprends ton style de bouton actuel */
+    padding: 15px 40px;
+    background-color: #4D3053;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'DM Serif Display', serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.btn-voir:hover {
+    transform: translateY(-5px);     /* Grossit légèrement */
+    background-color: #6F5774;  /* S'éclaircit un peu */
+    cursor: pointer;
+}
+
+
+
+/* --- NOUVEAU STYLE DU BOUTON "VOIR LES PROJETS" --- */
+
+.btnprojects2 {
+    /* 1. PLACEMENT (La partie qui répare ton problème) */
+    position: relative; /* On désactive le mode "flottant/absolute" */
+    display: table;     /* Astuce pour centrer un bouton lien facilement */
+    margin: 50px auto;  /* 50px d'espace en haut/bas, 'auto' centre gauche/droite */
+    
+    /* 2. STYLE VISUEL (Ton design) */
+    background-color: #4D3053; /* Ton violet foncé */
+    color: white;              /* Texte blanc */
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    text-decoration: none;     /* Enlève le soulignement moche */
+    
+    /* 3. FORME */
+    padding: 15px 40px;        /* Donne du volume au bouton */
+    border-radius: 50px;       /* Bords bien arrondis */
+    
+    /* 4. PETITS DÉTAILS */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Ombre légère */
+    transition: transform 0.3s ease;        /* Animation fluide */
+}
+
+/* Animation au survol */
+.btnprojects2:hover {
+    transform: translateY(-5px);     /* Grossit légèrement */
+    background-color: #6F5774;  /* S'éclaircit un peu */
+    cursor: pointer;
+}
+
+
+.cta-text {
+    text-align: center;           /* Centre le texte horizontalement */
+    font-family: 'DM Serif Display', serif; /* Ta police de titre */
+    font-size: 24px;              /* Taille bien visible */
+    color: #4D3053;               /* Ta couleur Prune */
+    
+    margin-top: 60px;             /* Espace au-dessus (pour se détacher des projets) */
+    margin-bottom: 10px;          /* Petit espace en dessous (le bouton fait le reste) */
+    
+    padding: 0 20px;              /* Sécurité pour ne pas toucher les bords sur mobile */
+}
+
+/* Footer */
+.footer {
+    background-color: #4D3053;
+    color: white;
+    padding: 2rem 2rem 1rem 2rem;
+    text-align: center;
+    border-radius: 22px 22px 0 0;
+}
+
+.footer h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400 !important;
+    margin-top: 0;
+    margin-bottom: 5px;
+
+}
+
+.btn-footer-contact {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 2px;
+    margin-bottom: 1rem;
+    width: 240px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+}
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 51px;
+    background: #6F5774;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    margin: 0 10px; /* Pour l'espace autour du point */
+}
+.footer-nav {
+    margin-bottom: 2rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.4rem;
+    margin: 0 2px;
+}
+
+.copyright {
+    font-family: "Inria serif" ;
+    font-size: 1rem;
+}
+@media screen and (max-width: 768px) {
+
+    /* 1. GLOBAL & STRUCTURE */
+    .main-wrapper {
+        width: 100%;
+        padding: 0 20px; /* On laisse une petite marge sur les côtés */
+    }
+
+    h1 { font-size: 3rem; } /* Titre plus petit */
+    h2 { font-size: 2rem; margin-left: 0; text-align: center; } /* Titres sections centrés */
+
+    /* 2. HEADER & RECHERCHE */
+    .hero {
+        min-height: auto;
+        padding-bottom: 120px; /* Place pour la boite de recherche */
+    }
+
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;         /* Autorise les éléments à passer à la ligne */
+        justify-content: center; /* Centre tout le monde */
+        gap: 10px;               /* Espace entre les boutons */
+        height: 80px; 
+        
+        
+    }
+    .navbar .btn {
+        padding: 10px 20px;  /* Plus d'espace autour du texte (Haut/Bas  Gauche/Droite) */
+        font-size: 18px;     /* Texte plus gros */
+        border-radius: 12px; /* Arrondis un peu plus les coins si tu veux */
+    }
+    /* C'est ici que la magie opère */
+    .navbar > a:first-child {
+        flex-basis: 100%;      /* Le lien du logo prend 100% de la largeur */
+        text-align: center;    /* On centre l'image à l'intérieur */
+        margin-bottom: 10px;   /* Un peu d'espace sous le logo */
+        margin-top: 0;         /* On retire la marge du haut si besoin */
+    }
+
+    /* 2. On AGRANDIT l'image du logo */
+    .navbar > a:first-child img {
+        height: 80px !important; /* <-- CHANGE CE CHIFFRE pour grossir/réduire */
+        width: auto;
+    }
+    .btn-qui-suis-je {
+        margin-bottom: 15px !important; /* Force un petit espace */
+    }
+
+    .search-status-box {
+        margin-top: 0px !important; /* Annule la marge du mode ordi */
+        
+        /* Si c'est encore trop loin, tu peux mettre un chiffre négatif :
+           margin-top: -20px !important; 
+        */
+    }
+
+    .hero {
+        justify-content: start; /* Colle les éléments vers le haut au lieu de centrer */
+        padding-top: 100px; /* Laisse de la place pour le header/logo */
+        gap: 10px; /* Espace minimal entre les éléments flex */
+    }
+
+
+    .btn { font-size: 1rem; padding: 8px 15px; } /* Petits boutons menu */
+
+    .search-status-box {
+        width: 90%; /* Prend toute la largeur */
+        flex-direction: column; /* Texte au dessus, bouton en dessous */
+        text-align: center;
+        bottom: 40px;
+        padding: 20px;
+    }
+
+    /* 3. SECTION JE SUIS (BIO) */
+    .bio-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        gap: 30px;
+    }
+
+    .bio-image-placeholder {
+        width: 100%; /* Image prend toute la largeur */
+        height: 350px; /* Un peu plus haut sur mobile pour bien voir */
+    }
+
+    .bio-tags {
+        justify-content: center; /* Tags centrés */
+    }
+
+    /* 4. SECTION MON TRAVAIL (RIDEAU) */
+    .curtain-container {
+        height: 300px; /* Moins haut sur mobile */
+    }
+    
+    .curtain-logo {
+        width: 100px; /* Logo plus petit */
+    }
+
+    .category-tag {
+        width: auto !important; /* Force la largeur à s'adapter */
+        padding: 8px 30px;      /* Espace sur les côtés */
+        white-space: nowrap;    /* Interdit au texte de passer à la ligne */
+        font-size: 1.2rem;      /* Un peu plus petit pour le mobile */
+    }
+
+    /* 5. GRILLE DES PROJETS */
+    .projects-grid {
+        grid-template-columns: 1fr; /* Une seule colonne (cartes les unes sous les autres) */
+        justify-items: center; /* Centre les cartes */
+    }
+    .btn-view-projects, 
+    .btnprojects2 {
+        width: fit-content !important; /* Le secret : s'adapte au contenu */
+        display: table !important;     /* Astuce pour bien centrer */
+        margin: 30px auto !important;  /* Centrage horizontal */
+        max-width: none;               /* Enlève toute limite qui gêne */
+    }
+    .slider-wrapper .btn-view-projects {
+        position: absolute; /* Reste positionné par dessus l'image */
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 !important; /* Annule la marge car on utilise absolute */
+        bottom: 20px;
+    }
+
+    .project-card-link, .project-box {
+        max-width: 100%; /* Prend toute la largeur dispo */
+    }
+
+    /* 6. BOUTONS */
+    .btn-view-projects, .btnprojects2 {
+        width: 100%; /* Bouton large facile à cliquer */
+        max-width: 300px;
+    }
+    
+    /* 7. SOFTWARE MARQUEE (LOGICIELS) */
+    .software-marquee {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .marquee-content span {
+        font-size: 20px; /* Texte plus petit */
+        padding: 0 20px;
+    }
+}

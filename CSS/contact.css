@@ -1,0 +1,313 @@
+/* --- HEADER CONTACT (Image 2) --- */
+
+/* Le conteneur principal pour créer de l'espace sur les côtés */
+.main-wrapper {
+    max-width: 1299px; /* Même largeur que ton accueil */
+    margin: 0 auto;    /* Centre le bloc horizontalement */
+    padding: 0 40px;   /* Ajoute une marge de sécurité interne */
+}
+
+/* On applique ce fond gris à toute la page */
+body {
+    background-color: #DBDBDB; 
+    margin: 0;
+    padding: 0;
+}
+.contact-header {
+    padding: 40px 0;
+    background-color: #DBDBDB; /* Fond clair comme le reste du site */
+}
+
+/* Alignement du header (Logo à gauche, liens à droite) */
+.navbar-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #DBDBDB; /* Ton gris habituel */
+}
+
+/* Taille de ton logo PNG */
+.nav-logo-img {
+    height: 70px; /* Ajuste cette valeur si tu veux le logo plus gros ou plus petit */
+    width: auto;
+    display: block;
+}
+
+/* Espacement entre les boutons de droite */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Style des boutons normaux (Contour prune) */
+.navbar-contact .btn {
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    color: #000;
+    padding: 10px 25px;
+    border: 1.5px solid #4D3053;
+    border-radius: 12px;
+    background: transparent;
+    transition: all 0.3s ease;
+
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.2s ease;
+}
+
+/* LE BOUTON CONTACT VIOLET (Grâce à la classe active) */
+.navbar-contact .btn.active {
+    background-color: #4D3053 !important;
+    color: #FFFFFF !important;
+    border: none;
+}
+
+.navbar-contact .btn:hover:not(.active) {
+    background-color: rgba(77, 48, 83, 0.1); /* Un voile léger au survol */
+    transform: translateY(-2px);
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* --- SECTION FORMULAIRE (Image 1) --- */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    align-items: start;
+}
+
+.contact-info h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+
+.mail-link {
+    font-weight: bold;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Styles des champs */
+.form-group {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #4D3053;
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    outline: none;
+    font-family: 'DM Serif Display', serif;
+}
+
+/* Tags de sujet (Boutons radio stylisés) */
+.subject-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.subject-tags input { display: none; }
+
+.subject-tags label {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    background: white;
+}
+
+.subject-tags input:checked + label {
+    background: #4D3053;    /* REMPLACE #1a1a1a PAR TON VIOLET */
+    color: white;           /* Texte en blanc */
+    border-color: #4D3053;  /* Bordure violette aussi */
+}
+
+.btn-submit {
+    /* Couleurs et Police */
+    background-color: #4D3053; /* Le violet clair de tes boutons */
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    
+    /* Forme et Taille */
+    padding: 15px 40px;
+    border-radius: 15px; /* Arrondi identique à "Qui suis-je ?" */
+    border: none;
+    
+    /* L'effet d'ombre (important pour le relief) */
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    
+    /* Alignement et curseur */
+    cursor: pointer;
+    display: block;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+
+}
+.contact-footer {
+    background-color: #4D3053;
+    padding: 30px 0; /* On enlève le padding latéral ici */
+    border-radius: 22px 22px 0 0;
+    margin-top: 80px;
+    
+    /* Ces lignes permettent de coller aux bords de l'écran */
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-container {
+    /* On utilise ta largeur de référence pour le contenu à l'intérieur */
+    width: 1299px; 
+    max-width: 90%; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+.footer-mail {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    /* Force le centrage parfait */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+    /* --- 1. NAVBAR & HEADER (Suppression du vide) --- */
+    .navbar-contact {
+        flex-direction: column;
+        gap: 20px;
+        /* HAUT: 10px | COTÉS: 20px | BAS: 0px (Important pour coller le texte) */
+        padding: 10px 20px 0px 20px !important; 
+        margin-bottom: 0 !important;
+    }
+
+    /* La capsule (contour violet) */
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1.5px solid #4D3053;
+        border-radius: 50px;
+        padding: 6px;
+        background-color: transparent;
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Les boutons dans la capsule */
+    .navbar-contact .btn {
+        border: none !important;
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+        border-radius: 40px;
+        white-space: nowrap;
+    }
+
+    .navbar-contact .btn.active {
+        background-color: #4D3053 !important;
+        color: #FFFFFF !important;
+    }
+
+    /* --- 2. CONTENEUR GLOBAL (Empilement) --- */
+    .contact-container { 
+        display: flex;
+        flex-direction: column; /* Tout s'empile verticalement */
+        align-items: center;    /* Centre les blocs (texte et form) */
+        gap: 30px;              /* Espace propre entre le mail et le formulaire */
+        
+        /* On colle ce bloc à la navbar */
+        margin-top: 0 !important;
+        padding-top: 10px !important; 
+    }
+
+    /* --- 3. BLOC TEXTE "DISCUTONS" (Centrage forcé) --- */
+    .contact-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; /* C'est lui qui centre physiquement les blocs */
+        width: 100% !important;
+        text-align: center !important;  /* C'est lui qui centre le texte à l'intérieur */
+        
+        margin-top: 0 !important;
+        padding-top: 10px !important;
+    }
+
+    /* On force le titre H1 à se centrer */
+    .contact-info h1 {
+        text-align: center !important;
+        width: 100% !important; /* Prend toute la largeur pour bien se centrer */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        font-size: 3rem; /* Ta taille mobile */
+    }
+
+    .btn-submit {
+        display: block !important;    /* Force le bouton à être un bloc pour pouvoir le centrer */
+        margin-left: auto !important;  /* Pousse depuis la gauche */
+        margin-right: auto !important; /* Pousse depuis la droite */
+        width: fit-content !important; /* S'assure qu'il ne prend que la place nécessaire */
+    }
+    /* On force le paragraphe ou le mail à se centrer */
+ 
+    /* --- 4. FORMULAIRE --- */
+    form {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0 !important; /* Évite un double espace */
+    }
+}

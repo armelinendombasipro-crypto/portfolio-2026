@@ -1,0 +1,374 @@
+/* On applique ce fond gris à toute la page */
+body {
+    background-color: #DBDBDB; 
+    margin: 0;
+    padding: 0;
+}
+.contact-header {
+    padding: 40px 0;
+    background-color: #DBDBDB; /* Fond clair comme le reste du site */
+}
+
+/* Alignement du header (Logo à gauche, liens à droite) */
+.navbar-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #DBDBDB; /* Ton gris habituel */
+}
+
+/* Taille de ton logo PNG */
+.nav-logo-img {
+    height: 70px; /* Ajuste cette valeur si tu veux le logo plus gros ou plus petit */
+    width: auto;
+    display: block;
+}
+
+/* Espacement entre les boutons de droite */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Style des boutons normaux (Contour prune) */
+.navbar-contact .btn {
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    color: #000;
+    padding: 10px 25px;
+    border: 1.5px solid #4D3053;
+    border-radius: 12px;
+    background: transparent;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s ease;
+}
+
+/* LE BOUTON CONTACT VIOLET (Grâce à la classe active) */
+.navbar-contact .btn.active {
+    background-color: #4D3053 !important;
+    color: #FFFFFF !important;
+    border: none;
+}
+.navbar-contact .btn:hover:not(.active) {
+    background-color: rgba(77, 48, 83, 0.1); /* Un voile léger au survol */
+    transform: translateY(-2px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+
+.cv-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+/* TITRE */
+.cv-title {
+    font-family: "DM Serif Display", serif;
+    font-size: 64px;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+/* GRILLE PRINCIPALE */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr 300px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* COLONNES */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* CARTES */
+.card {
+    border-radius: 22px;
+    padding: 25px;
+    background-color: #FFF;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.card, .cv-list li, .cv-list-simple li, p {
+    /* On augmente la taille de base (environ 18px ici) */
+    font-size: 1.4rem; 
+    /* TRES IMPORTANT : On écarte les lignes pour que ça respire */
+    line-height: 1.3;   
+}
+
+.card .cv-list, 
+.card .cv-list-simple, 
+.card .timeline, 
+.card p {
+    margin-top: 0;
+}
+
+/* CARTE VIOLETTE */
+.card-plum {
+    background-color: #4D3053;
+    color: #FFF;
+}
+
+/* EXPERIENCE PRO */
+.experience-card {
+    min-height: 620px;
+}
+
+/* TIMELINE */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 10px;
+}
+
+.timeline-item .date {
+    font-weight: bold;
+    font-size: 1.2rem;
+    min-width: 100px;
+}
+
+/* LISTES */
+.cv-list {
+    padding-left: 20px;
+}
+
+.cv-list li {
+    margin-bottom: 8px;
+}
+
+.cv-list-simple {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cv-list-simple li {
+    margin-bottom: 8px;
+}
+
+/* --- BADGES FLEXIBLES (Fixe l'écrasement) --- */
+.badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge-icon {
+    /* La forme s'adapte maintenant au texte sans s'écraser */
+    display: inline-flex;
+    padding: 8px 15px;
+    background: #4D3053;
+    color: white;
+    border-radius: 12px; /* Forme arrondie flexible */
+    font-weight: bold;
+    font-size: 1.1rem;
+    white-space: nowrap; /* Empêche le texte de revenir à la ligne dans le badge */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* --- BOUTON IMPRIMER --- */
+.btn-print {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    border: none;
+    align-self: flex-end; /* Garde l'alignement à droite dans la colonne */
+    display: inline-block;
+
+    padding: 12px 35px;
+    background-color: #4D3053;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem; /* Taille harmonisée */
+    color: white;
+    text-decoration: none;
+    border-radius: 17px; /* Coins plus carrés/modernes */
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-print:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+
+.footer {
+    background-color: #4D3053;
+    color: white;
+    padding: 2rem 2rem 1rem 2rem;
+    text-align: center;
+    border-radius: 22px 22px 0 0;
+}
+
+.footer h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400 !important;
+    margin-top: 0;
+    margin-bottom: 5px;
+
+}
+
+.btn-footer-contact {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 2px;
+    margin-bottom: 1rem;
+    width: 240px;
+    font-family: 'DM Serif Display';
+    font-size: 2rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+}
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 51px;
+    background: #6F5774;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    margin: 0 10px; /* Pour l'espace autour du point */
+}
+.footer-nav {
+    margin-bottom: 2rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.4rem;
+    margin: 0 2px;
+}
+
+.copyright {
+    font-family: "Inria serif" ;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    /* 1. On centre le logo et le menu sur mobile */
+    .navbar-contact {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    /* 2. LA CAPSULE (Le contour prune fin qui entoure tous les boutons) */
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1.5px solid #4D3053; /* Bordure un peu plus épaisse */
+        border-radius: 50px;
+        padding: 6px; /* Plus d'espace interne */
+        background-color: transparent;
+        width: 90%; /* Prend plus de place en largeur */
+        max-width: 400px; /* Mais garde une taille raisonnable */
+        margin: 0 auto;
+    }
+
+    /* 2. On augmente la taille du texte et l'espace des boutons */
+    .navbar-contact .btn {
+        border: none !important;
+        padding: 12px 20px; /* Boutons plus hauts et larges pour le pouce */
+        font-size: 1rem;    /* Texte plus grand (16px environ) */
+        font-weight: 600;   /* Un peu plus gras pour la lisibilité */
+        margin: 0;
+        border-radius: 40px;
+        white-space: nowrap;
+    }
+
+    /* 4. LE BOUTON ACTIF (Violet plein) */
+    .navbar-contact .btn.active {
+        background-color: #4D3053 !important;
+        color: #FFFFFF !important;
+    }
+
+
+/* On utilise 768px pour être raccord avec tes autres pages */
+    
+
+  /* CONTENEUR */
+  .cv-container {
+    padding: 20px;
+  }
+
+  /* TITRE */
+  .cv-title {
+    font-size: 42px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  /* GRILLE → COLONNE */
+  .cv-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* COLONNES */
+  .column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* CARTES */
+  .card {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* EXPÉRIENCE */
+  .experience-card {
+    min-height: auto;
+  }
+
+  /* BADGES */
+  .badges-row {
+    justify-content: flex-start;
+  }
+
+  .btn-print {
+    width: auto;          /* largeur automatique pour ne pas remplir tout l'écran */
+    display: block;       /* nécessaire pour que margin auto fonctionne */
+    margin: 20px auto;    /* centre le bouton horizontalement et espace vertical */
+    text-align: center;   /* pour le texte à l'intérieur */
+}
+
+}
+
+
+
+
+    

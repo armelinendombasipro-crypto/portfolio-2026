@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="CSS/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <header class="contact-header">
+    <nav class="navbar-contact">
+        <a href="index.html" class="logo-nav-link">
+            <img src="IMAGE/logo-portfolio.png" alt="Accueil" class="nav-logo-img">
+        </a>
+
+        <div class="nav-links">
+            <a href="cv.html" class="btn">CV</a>
+            <a href="projets.html" class="btn">Projets</a>
+            <a href="apropos.html" class="btn">À propos</a>
+            <a href="contact.html" class="btn active">Contact</a>
+        </div>
+    </nav>
+</header>
+
+    <main class="main-wrapper">
+        <section class="contact-container">
+            <div class="contact-info">
+                <h1> Discutons</h1>
+                <p>Vous avez une idée, un projet ou simplement envie d’échanger ? Remplissez le formulaire ou cliquez sur le mail et je vous répondrai dans les plus brefs délais.</p>
+                <a href="mailto:armelinendombasipro@gmail.com" class="mail-link">armelinendombasipro@gmail.com ↗</a>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label> NOM </label>
+                    <input type="text" name="nom" placeholder="Ton nom" required>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label> PRÉNOM </label>
+                        <input type="text" name="prenom" placeholder="Ton prénom" required>
+                    </div>
+    
+
+                <div class="form-group">
+                    <label>MAIL</label>
+                    <input type="email" name="email" placeholder="ton@mail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label> À QUEL SUJET ?</label>
+                    <div class="subject-tags">
+                        <input type="checkbox" name="sujet[]" id="design" value="Design graphique">
+                        <label for="design">Design graphique</label>
+                    
+                        <input type="checkbox" name="sujet[]" id="uiux" value="UI/UX design">
+                        <label for="uiux">UI/UX design</label>
+                    
+                        <input type="checkbox" name="sujet[]" id="motion" value="Motion Design">
+                        <label for="motion">Motion Design</label>
+                    
+                        <input type="checkbox" name="sujet[]" id="audio" value="Audiovisuel">
+                        <label for="audio">Audiovisuel</label>
+                    
+                        <input type="checkbox" name="sujet[]" id="stage" value="Stage">
+                        <label for="stage">Stage</label>
+                    
+                        <input type="checkbox" name="sujet[]" id="alternance" value="Alternance">
+                        <label for="alternance">Alternance</label>
+                    
+                        <input type="checkbox" name="sujet[]" id="autre" value="Autre">
+                        <label for="autre">Autre</label>
+                    </div>
+                    </div>
+
+                <div class="form-group">
+                    <label>ÉCRIVEZ ICI VOTRE MESSAGE</label>
+                    <textarea name="message" placeholder="Mon objectif est de..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Envoyer le message</button>
+        </section>
+    </main>
+
+    <footer class="contact-footer">
+        <div class="footer-container">
+            <a href="mention-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="https://www.linkedin.com/in/armeline-ndombasi-kibula-477188256/" target="_blank" class="footer-link">
+                Linkedin
+            </a>
+        </div>
+    </footer>
+    <script src="JS/revelation.js"></script>
+    <script src="JS/formulaire.js"></script>
+    <script src="JS/btn.js"></script>
+</body>
+</html>

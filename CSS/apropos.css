@@ -1,0 +1,375 @@
+/* --- CONFIGURATION GÉNÉRALE --- */
+
+/* Applique le gris à toute la page pour éviter les bandes blanches */
+body {
+    background-color: #DBDBDB;
+    margin: 0;
+}
+
+
+.contact-header {
+    padding: 40px 0;
+    background-color: #DBDBDB; /* Fond clair comme le reste du site */
+}
+
+/* Alignement du header (Logo à gauche, liens à droite) */
+.navbar-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #DBDBDB; /* Ton gris habituel */
+}
+
+/* Taille de ton logo PNG */
+.nav-logo-img {
+    height: 70px; /* Ajuste cette valeur si tu veux le logo plus gros ou plus petit */
+    width: auto;
+    display: block;
+}
+
+/* Espacement entre les boutons de droite */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Style des boutons normaux (Contour prune) */
+.navbar-contact .btn {
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    color: #000;
+    padding: 10px 25px;
+    border: 1.5px solid #4D3053;
+    border-radius: 12px;
+    background: transparent;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.2s ease;
+}
+
+/* LE BOUTON CONTACT VIOLET (Grâce à la classe active) */
+.navbar-contact .btn.active {
+    background-color: #4D3053 !important;
+    color: #FFFFFF !important;
+    border: none;
+}
+
+.navbar-contact .btn:hover:not(.active) {
+    background-color: rgba(77, 48, 83, 0.1); /* Un voile léger au survol */
+    transform: translateY(-2px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* --- SECTION À PROPOS --- */
+
+.main-wrapper {
+    max-width: 1299px; /* Ta largeur de référence */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+#about-container {
+    display: flex;
+    gap: 100px; /* Espace entre la photo et le texte */
+    align-items: flex-start;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+/* 1. GAUCHE : La Photo */
+.about-image-side {
+    flex: 1; /* Prend 1 part de l'espace */
+}
+
+.photo-frame {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Format portrait élégant */
+    border: 1.5px solid #4D3053; /* Ta couleur violette */
+    border-radius: 25px; /* Coins arrondis comme tes boutons */
+    overflow: hidden;
+    background-color: #f0f0f0; /* Placeholder si l'image charge mal */
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 2. DROITE : L'Accordéon */
+.about-content-side {
+    flex: 1.2; /* Un peu plus large que la photo */
+}
+
+.serif-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.stage-info {
+    font-family: sans-serif;
+    color: #4D3053;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+/* Style de l'accordéon */
+.accordion-wrapper {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.acc-item {
+    border-top: 1px solid rgba(77, 48, 83, 0.3); /* Ligne fine violette */
+}
+
+.acc-item:last-child {
+    border-bottom: 1px solid rgba(77, 48, 83, 0.3);
+}
+
+.acc-header {
+    display: flex;
+    justify-content: space-between; /* Titre à gauche, Point à droite */
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.acc-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Le point indicateur à droite */
+.acc-dot {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #4D3053;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* État Actif (Quand c'est ouvert) */
+.acc-item.is-active .acc-dot {
+    background-color: #4D3053; /* Le point se remplit */
+    transform: scale(1.1);
+}
+
+.acc-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+
+.acc-body p {
+    /* Application de la typo Inria Serif */
+    font-family: 'Inria Serif', serif; 
+    
+    /* On augmente la taille pour plus de confort */
+    font-size: 1.15rem; 
+    
+    /* Justification du texte pour un rendu pro */
+    text-align: justify; 
+    
+    /* On ajuste l'interlignage pour aérer les blocs */
+    line-height: 1.4; 
+    
+    color: #000000;
+    margin: 0;
+}
+
+.acc-item.is-active .acc-body {
+    max-height: 500px; /* Suffisant pour le texte */
+    opacity: 1;
+    padding-bottom: 25px;
+}
+
+/* Le bouton CV style portfolio */
+.btn-cv-about {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #4D3053;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 17px;
+    font-weight: 500;
+    transition: 0.3s;
+    
+}
+
+.btn-cv-about:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+
+/* --- FOOTER PRUNE COMPLET (Style Accueil) --- */
+
+/* Footer */
+.footer {
+    background-color: #4D3053;
+    color: white;
+    padding: 2rem 2rem 1rem 2rem;
+    text-align: center;
+    border-radius: 22px 22px 0 0;
+}
+
+.footer h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400 !important;
+    margin-top: 0;
+    margin-bottom: 5px;
+
+}
+
+.btn-footer-contact {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 2px;
+    margin-bottom: 1rem;
+    width: 240px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+}
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 51px;
+    background: #6F5774;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    margin: 0 10px; /* Pour l'espace autour du point */
+}
+.footer-nav {
+    margin-bottom: 2rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'DM Serif Display', serif;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.4rem;
+    margin: 0 2px;
+}
+
+.copyright {
+    font-family: "Inria serif" ;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    /* 1. On centre le logo et le menu sur mobile */
+    .navbar-contact {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    /* 2. LA CAPSULE (Le contour prune fin qui entoure tous les boutons) */
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 1.5px solid #4D3053; /* Bordure un peu plus épaisse */
+        border-radius: 50px;
+        padding: 6px; /* Plus d'espace interne */
+        background-color: transparent;
+        width: 90%; /* Prend plus de place en largeur */
+        max-width: 400px; /* Mais garde une taille raisonnable */
+        margin: 0 auto;
+    }
+
+    /* 2. On augmente la taille du texte et l'espace des boutons */
+    .navbar-contact .btn {
+        border: none !important;
+        padding: 12px 20px; /* Boutons plus hauts et larges pour le pouce */
+        font-size: 1rem;    /* Texte plus grand (16px environ) */
+        font-weight: 600;   /* Un peu plus gras pour la lisibilité */
+        margin: 0;
+        border-radius: 40px;
+        white-space: nowrap;
+    }
+
+    /* 4. LE BOUTON ACTIF (Violet plein) */
+    .navbar-contact .btn.active {
+        background-color: #4D3053 !important;
+        color: #FFFFFF !important;
+    }
+   
+    #about-container {
+        display: flex;
+        flex-direction: column; /* Image en haut, contenu en bas */
+        align-items: center;
+        padding: 20px;
+        gap: 30px; /* Espace entre l'image et le texte */
+    }
+
+    /* 2. On ajuste le bloc de l'image */
+    .about-image-side {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .photo-frame {
+        width: 250px; /* Taille adaptée au mobile */
+        height: auto;
+    }
+
+    .photo-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px; /* Pour garder ton style arrondi */
+        object-fit: cover; /* Coupe l'image proprement si les dimensions ne collent pas pile poil */
+    }
+
+    /* 3. On ajuste le bloc de l'accordéon */
+    .about-content-side {
+        width: 100%;
+        text-align: center; /* Centre le titre et le bouton CV */
+    }
+
+    .serif-title {
+        font-size: 2.5rem; /* Titre un peu plus petit pour mobile */
+        margin-bottom: 15px;
+    }
+
+    .accordion-wrapper {
+        width: 100%;
+        text-align: left; /* Garde le texte de l'accordéon aligné à gauche pour la lecture */
+    }
+
+    /* 4. On espace le bouton CV tout en bas */
+    .btn-cv-about {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 40px;
+    }
+    }
+
+
+
+
+
+
+
+
