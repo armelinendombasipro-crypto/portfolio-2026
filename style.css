@@ -713,21 +713,15 @@ margin-bottom: 80px; /* Espace avec "Mes derniers projets" en bas */
         padding: 0 20px; /* On laisse une petite marge sur les côtés */
     }
 
-    h1 { font-size: 3rem; } /* Titre plus petit */
-    h2 { font-size: 2rem; margin-left: 0; text-align: center; } /* Titres sections centrés */
-
-    /* 2. HEADER & RECHERCHE */
-    .hero {
-        min-height: auto;
-        padding-bottom: 120px; /* Place pour la boite de recherche */
-    }
+    h1 { font-size: 2rem; } /* Titre plus petit */
+    h2 { font-size: 1.8rem; margin-left: 0; text-align: center; } /* Titres sections centrés */
 
     .navbar {
         display: flex;
         flex-wrap: wrap;         /* Autorise les éléments à passer à la ligne */
         justify-content: center; /* Centre tout le monde */
         gap: 10px;               /* Espace entre les boutons */
-        height: 80px; 
+        height: auto !important; 
         
         
     }
