@@ -222,7 +222,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* --- 1. NAVBAR & HEADER (Suppression du vide) --- */
     .navbar-contact {
         flex-direction: column;
