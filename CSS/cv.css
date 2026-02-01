@@ -272,38 +272,34 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .navbar-contact {
-        display: flex; /* Active flexbox pour le header */
+.navbar-contact {
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 10px 10px 0px 10px !important; 
+        gap: 20px;
+        padding: 20px 10px;
     }
 
     .nav-links {
         display: flex;
         flex-direction: row;
-        justify-content: space-between; /* Distribue les boutons sur toute la largeur */
+        justify-content: center;
         align-items: center;
         border: 1.5px solid #4D3053;
         border-radius: 50px;
-        padding: 4px; /* Réduit le rembourrage interne pour gagner de la place */
+        padding: 6px;
         background-color: transparent;
-        width: 95%; /* Augmente légèrement la largeur pour éviter le débordement */
+        width: 90%;
         max-width: 400px;
         margin: 0 auto;
-        overflow: hidden; /* Sécurité pour ne rien laisser dépasser */
     }
 
     .navbar-contact .btn {
-        flex: 1; /* Force chaque bouton à prendre une part égale de la capsule */
-        text-align: center;
         border: none !important;
-        padding: 10px 5px; /* Réduit l'espace sur les côtés du texte */
-        font-size: 0.85rem; /* Diminue la taille du texte pour que tout tienne */
+        padding: 12px 20px;
+        font-size: 1rem;
         font-weight: 600;
+        margin: 0;
         border-radius: 40px;
-        white-space: nowrap; /* Empêche le texte de passer à la ligne */
+        white-space: nowrap;
     }
 
 
