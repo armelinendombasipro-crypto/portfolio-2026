@@ -271,39 +271,41 @@ body {
     font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-    /* 1. On centre le logo et le menu sur mobile */
+@media screen and (max-width: 768px) {
     .navbar-contact {
+        display: flex; /* Active flexbox pour le header */
         flex-direction: column;
-        gap: 20px;
-        padding: 20px 10px;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 10px 0px 10px !important; 
     }
 
-    /* 2. LA CAPSULE (Le contour prune fin qui entoure tous les boutons) */
     .nav-links {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between; /* Distribue les boutons sur toute la largeur */
         align-items: center;
-        border: 1.5px solid #4D3053; /* Bordure un peu plus épaisse */
+        border: 1.5px solid #4D3053;
         border-radius: 50px;
-        padding: 6px; /* Plus d'espace interne */
+        padding: 4px; /* Réduit le rembourrage interne pour gagner de la place */
         background-color: transparent;
-        width: 90%; /* Prend plus de place en largeur */
-        max-width: 400px; /* Mais garde une taille raisonnable */
+        width: 95%; /* Augmente légèrement la largeur pour éviter le débordement */
+        max-width: 400px;
         margin: 0 auto;
+        overflow: hidden; /* Sécurité pour ne rien laisser dépasser */
     }
 
-    /* 2. On augmente la taille du texte et l'espace des boutons */
     .navbar-contact .btn {
+        flex: 1; /* Force chaque bouton à prendre une part égale de la capsule */
+        text-align: center;
         border: none !important;
-        padding: 12px 20px; /* Boutons plus hauts et larges pour le pouce */
-        font-size: 1rem;    /* Texte plus grand (16px environ) */
-        font-weight: 600;   /* Un peu plus gras pour la lisibilité */
-        margin: 0;
+        padding: 10px 5px; /* Réduit l'espace sur les côtés du texte */
+        font-size: 0.85rem; /* Diminue la taille du texte pour que tout tienne */
+        font-weight: 600;
         border-radius: 40px;
-        white-space: nowrap;
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
     }
+
 
     /* 4. LE BOUTON ACTIF (Violet plein) */
     .navbar-contact .btn.active {
