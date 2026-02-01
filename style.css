@@ -707,145 +707,162 @@ margin-bottom: 80px; /* Espace avec "Mes derniers projets" en bas */
 }
 @media screen and (max-width: 768px) {
 
-    /* 1. GLOBAL & STRUCTURE */
+    /* 1. TA SÉCURITÉ (MIN-WIDTH) */
+    /* Empêche le site de s'écraser en dessous de 320px (taille d'un petit iPhone SE/Fold) */
+    html, body, .main-wrapper {
+        min-width: 320px !important;
+        overflow-x: auto !important; /* Ajoute un scroll horizontal si l'écran est vraiment minuscule */
+    }
+
+    /* 2. GLOBAL & STRUCTURE (Ton code d'origine) */
     .main-wrapper {
         width: 100%;
-        padding: 0 20px; /* On laisse une petite marge sur les côtés */
+        padding: 0 20px;
+        overflow: visible !important; /* Autorise la bannière à sortir du cadre ! */
+    
     }
 
-   h1 { font-size: 3rem; } /* Titre plus petit */
-    h2 { font-size: 2rem; margin-left: 0; text-align: center; } /* Titres sections centrés */
+    h1 { font-size: 2.5rem !important; margin-top: 10px; line-height: 1.1; }
+    h2 { font-size: 2rem; margin-left: 0; text-align: center; }
 
-    /* 2. HEADER & RECHERCHE */
+    /* 3. HERO CORRIGÉ (Erreur hauteur) */
     .hero {
-        min-height: auto;
-        padding-bottom: 120px; /* Place pour la boite de recherche */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        /* CORRECTION : On enlève la hauteur bloquée pour éviter que le contenu ne soit coupé */
+        height: auto !important; 
+        min-height: 100vh;
+        
+        padding-top: 100px;
+        padding-bottom: 50px;
     }
+
+    /* 4. NAVBAR CORRIGÉE (Erreur chevauchement) */
     .navbar {
         display: flex;
-        flex-wrap: wrap;         /* Autorise les éléments à passer à la ligne */
-        justify-content: center; /* Centre tout le monde */
-        gap: 10px;               /* Espace entre les boutons */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        
+        /* CORRECTION : On enlève le 'height: 80px' qui écrasait le titre Armeline */
         height: auto !important; 
-        
-        
-    }
-    .navbar .btn {
-        padding: 10px 20px;  /* Plus d'espace autour du texte (Haut/Bas  Gauche/Droite) */
-        font-size: 18px;     /* Texte plus gros */
-        border-radius: 12px; /* Arrondis un peu plus les coins si tu veux */
-    }
-    /* C'est ici que la magie opère */
-    .navbar > a:first-child {
-        flex-basis: 100%;      /* Le lien du logo prend 100% de la largeur */
-        text-align: center;    /* On centre l'image à l'intérieur */
-        margin-bottom: 10px;   /* Un peu d'espace sous le logo */
-        margin-top: 0;         /* On retire la marge du haut si besoin */
+        min-height: 80px; 
+        margin-bottom: 20px;
     }
 
-    /* 2. On AGRANDIT l'image du logo */
+    .navbar .btn {
+        padding: 10px 20px;
+        font-size: 16px; /* Ajusté légèrement pour que ça rentre mieux */
+        border-radius: 12px;
+    }
+
+    .navbar > a:first-child {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+
     .navbar > a:first-child img {
-        height: 80px !important; /* <-- CHANGE CE CHIFFRE pour grossir/réduire */
+        height: 80px !important;
         width: auto;
     }
-    .btn-qui-suis-je {
-        margin-bottom: 15px !important; /* Force un petit espace */
-    }
 
+    /* 5. BOITE DE RECHERCHE CORRIGÉE (Erreur positionnement) */
     .search-status-box {
-        margin-top: 0px !important; /* Annule la marge du mode ordi */
+        /* On annule le flottant qui cause les bugs sur Galaxy Fold/iPhone */
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
         
-        /* Si c'est encore trop loin, tu peux mettre un chiffre négatif :
-           margin-top: -20px !important; 
-        */
-    }
-
-    .hero {
-        justify-content: start; /* Colle les éléments vers le haut au lieu de centrer */
-        padding-top: 100px; /* Laisse de la place pour le header/logo */
-        gap: 10px; /* Espace minimal entre les éléments flex */
-    }
-
-
-    .btn { font-size: 1rem; padding: 8px 15px; } /* Petits boutons menu */
-
-    .search-status-box {
-        width: 90%; /* Prend toute la largeur */
-        flex-direction: column; /* Texte au dessus, bouton en dessous */
+        /* CORRECTION : Largeur fluide 90% comme demandé */
+        width: 90% !important;
+        margin: 20px auto !important; /* Centrage automatique */
+        
+        /* On garde ton style mais on s'assure qu'il s'adapte */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        bottom: 40px;
         padding: 20px;
     }
 
-    /* 3. SECTION JE SUIS (BIO) */
+    /* 6. BOUTON QUI SUIS-JE */
+    .btn-qui-suis-je {
+        position: relative !important;
+        margin: 20px auto !important;
+        width: auto !important;
+        display: block !important;
+    }
+
+    /* --- TOUT LE RESTE EST TON CODE D'ORIGINE --- */
+    
+    .btn { font-size: 1rem; padding: 8px 15px; }
+
     .bio-grid {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 
     .bio-image-placeholder {
-        width: 100%; /* Image prend toute la largeur */
-        height: 350px; /* Un peu plus haut sur mobile pour bien voir */
+        width: 100%;
+        height: 350px;
     }
 
     .bio-tags {
-        justify-content: center; /* Tags centrés */
+        justify-content: center;
     }
 
-    /* 4. SECTION MON TRAVAIL (RIDEAU) */
     .curtain-container {
-        height: 300px; /* Moins haut sur mobile */
+        height: 300px;
     }
     
     .curtain-logo {
-        width: 100px; /* Logo plus petit */
+        width: 100px;
     }
 
     .category-tag {
-        width: auto !important; /* Force la largeur à s'adapter */
-        padding: 8px 30px;      /* Espace sur les côtés */
-        white-space: nowrap;    /* Interdit au texte de passer à la ligne */
-        font-size: 1.2rem;      /* Un peu plus petit pour le mobile */
+        width: auto !important;
+        padding: 8px 30px;
+        white-space: nowrap;
+        font-size: 1.2rem;
     }
 
-    /* 5. GRILLE DES PROJETS */
     .projects-grid {
-        grid-template-columns: 1fr; /* Une seule colonne (cartes les unes sous les autres) */
-        justify-items: center; /* Centre les cartes */
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
+    
     .btn-view-projects, 
     .btnprojects2 {
-        width: fit-content !important; /* Le secret : s'adapte au contenu */
-        display: table !important;     /* Astuce pour bien centrer */
-        margin: 30px auto !important;  /* Centrage horizontal */
-        max-width: none;               /* Enlève toute limite qui gêne */
+        width: fit-content !important;
+        display: table !important;
+        margin: 30px auto !important;
+        max-width: none;
     }
+    
     .slider-wrapper .btn-view-projects {
-        position: absolute; /* Reste positionné par dessus l'image */
+        position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        margin: 0 !important; /* Annule la marge car on utilise absolute */
+        margin: 0 !important;
         bottom: 20px;
     }
 
     .project-card-link, .project-box {
-        max-width: 100%; /* Prend toute la largeur dispo */
+        max-width: 100%;
     }
 
-    /* 6. BOUTONS */
-    .btn-view-projects, .btnprojects2 {
-        width: 100%; /* Bouton large facile à cliquer */
-        max-width: 300px;
-    }
-    
-    /* 7. SOFTWARE MARQUEE (LOGICIELS) */
     .software-marquee {
         margin-top: 40px;
         margin-bottom: 40px;
     }
     
     .marquee-content span {
-        font-size: 20px; /* Texte plus petit */
+        font-size: 20px;
         padding: 0 20px;
     }
 }
