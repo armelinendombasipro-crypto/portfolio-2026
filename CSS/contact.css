@@ -224,15 +224,12 @@ body {
 
 @media screen and (max-width: 768px) {
     /* --- 1. NAVBAR & HEADER (Suppression du vide) --- */
-    .navbar-contact {
+.navbar-contact {
         flex-direction: column;
         gap: 20px;
-        /* HAUT: 10px | COTÉS: 20px | BAS: 0px (Important pour coller le texte) */
-        padding: 10px 20px 0px 20px !important; 
-        margin-bottom: 0 !important;
+        padding: 20px 10px;
     }
 
-    /* La capsule (contour violet) */
     .nav-links {
         display: flex;
         flex-direction: row;
@@ -247,7 +244,6 @@ body {
         margin: 0 auto;
     }
 
-    /* Les boutons dans la capsule */
     .navbar-contact .btn {
         border: none !important;
         padding: 12px 20px;
