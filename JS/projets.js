@@ -44,6 +44,54 @@ const dataProjets = {
         outils: ["Davinci Resolve", "Caméra"],
         galerie: ["IMAGE/audiovisuel/302-img2.jpeg", "IMAGE/audiovisuel/302-img3.png" ]
     }
+
+      'Cop&Wear': {
+        titre: "Cop&Wear",
+        categorie: "graphisme",
+        type: "UNIVERSITAIRE", 
+        annee: "2025",
+        description: "<b>CONTEXTE ET OBJECTIFS</b><br>Ce projet universitaire consistait à créer un site web statique mettant en avant une œuvre de bande dessinée ou un animé. J'ai choisi de travailler sur le manga d'horreur 'Tomie' de Junji Ito. L'objectif était de structurer un site complet comprenant une présentation de l'intrigue, une biographie de l'auteur, une galerie de planches et une section transmédia explorant les adaptations en films et séries.<br><br><b>RÉALISATIONS</b><br>Pour commencer, j'ai réalisé une planche d'influence et une planche tendance pour définir l'univers visuel sombre du site. J'ai ensuite conçu les maquettes sur Figma avant de passer à la réalisation concrète sur le CMS Jimdo. J'ai dû organiser le contenu de manière sémantique sur plusieurs pages, intégrer des médias variés et respecter la contrainte technique d'ajouter un GIF animé pour dynamiser l'interface tout en restant fidèle à l'ambiance fascinante du manga.<br><br><b>BILAN ET SAVOIR-ÊTRE</b><br>Ce projet m'a permis d'apprendre à traduire une analyse des besoins en une interface fluide et fonctionnelle. J'ai su adapter mon design aux contraintes d'un template tout en personnalisant l'expérience utilisateur pour plonger les visiteurs dans l'univers de l'horreur. Cette expérience confirme ma capacité à gérer un projet de création web de A à Z, de la phase de recherche graphique jusqu'à la mise en ligne sur un CMS.",
+        imagesPrincipales: ["IMAGE/design-graphique/copwear.png"],
+        competences: [ "Direction artistique", "Chef de projet"],
+        outils: [ "Photoshop" ,"Illistrator"],
+        galerie: ["IMAGE/design-graphique/copwear.png" ]
+    },
+
+    'mirror': {
+        titre: "Mirroir",
+        categorie: "photographie",
+        type: "UNIVERSITAIRE", 
+        annee: "2025",
+       description: "<b>CONTEXTE ET OBJECTIFS</b><br>Ce projet a été réalisé dans le cadre de la matière universitaire Culture Artistique. La consigne imposait une unique contrainte : la réalisation d'un portrait artistique, tout en laissant une totale liberté sur l'interprétation. J'ai choisi de m'éloigner du portrait classique pour explorer la thématique du reflet et de l'introspection. L'objectif était d'utiliser le miroir non pas comme un simple accessoire, mais comme le prisme central permettant de déconstruire et d'interroger l'image de soi.<br><br><b>RÉALISATIONS MÉTIERS</b><br>Pour répondre à ce sujet, j'ai assuré la direction artistique et la réalisation technique. J'ai conçu une mise en scène centrée sur un miroir brisé pour capturer les multiples facettes d'un visage féminin. L'idée du bris de glace visait à symboliser la complexité de l'identité et la perception parfois fragmentée que l'on a de sa propre personne. J'ai travaillé sur les angles et les jeux de lumière pour que chaque éclat de verre renvoie une expression différente, créant ainsi un portrait psychologique à travers la photographie.<br><br><b>BILAN ET SAVOIR-ÊTRE</b><br>Ce travail personnel a été l'occasion de mettre en avant et de perfectionner mes compétences en photographie. Il m'a permis de développer ma capacité à conceptualiser une idée abstraite pour la traduire visuellement avec esthétisme, tout en confirmant ma sensibilité artistique pour la composition et la narration par l'image.",
+        imagesPrincipales: ["IMAGE/photographie/_imageR.jpg", "IMAGE/photographie/_MG_5487.png", ], 
+        competences: ["photographie"],
+        outils: ["photoshop", "canon 80d"],
+        galerie: ["IMAGE/photographie/_MG_5503.png"]
+    },
+    'causette': {
+        titre: "Causette",
+        categorie: "graphisme",
+        type: "UNIVERSITAIRE", 
+        annee: "2025",
+       description: "<b>CONTEXTE ET OBJECTIFS</b><br>Ce projet, réalisé dans le cadre d'une SAE (Situation d'Apprentissage et d'Évaluation), consistait à créer de toutes pièces une ONG fictive dédiée à la lutte contre les violences conjugales : 'À cœur ouvert'. Avec mon équipe de 9 étudiants, notre mission était de concevoir un espace d’écoute et de soutien accessible 24h/24 et 7j/7.<br><br><b>RÉALISATIONS MÉTIERS</b><br>Pour donner vie à cette ONG, nous avons produit un écosystème de communication complet : planche tendance, affiches, charte graphique, vidéos de prévention, site web et ligne éditoriale. J'ai été responsable de la partie audiovisuelle, de la scénarisation au montage final des deux publicités de prévention.<br><br>Pour la première, le synopsis suit Jean qui, après avoir subi une violence de sa femme Nicole, finit par appeler l’association. Le message final, « La violence n’a pas de genre, notre ONG s’occupe de toutes les victimes », rappelle que tout le monde peut être concerné. La seconde vidéo met en scène Aurora, qui utilise le bouton de secours du site pour masquer sa navigation à l'arrivée de son mari. J'ai réalisé ces scénarios et effectué le montage pour traduire visuellement la tension et l'urgence de ces situations tout en respectant l'identité de l'ONG.<br><br><b>BILAN ET SAVOIR-ÊTRE</b><br>Travailler au sein d'un groupe de 9 personnes a été une expérience humaine et professionnelle intense. Ce projet m'a permis de développer ma capacité à traiter des sujets sensibles avec justesse et de confirmer mes compétences en réalisation vidéo au service d'une cause sociale.",
+        imagesPrincipales: ["IMAGE/photographie/_imageR.jpg", "IMAGE/photographie/_MG_5487.png", ], 
+        competences: ["photographie"],
+        outils: ["photoshop", "canon 80d"],
+        galerie: ["IMAGE/photographie/_MG_5503.png"]
+    },
+
+    'bullysoul': {
+        titre: "Bullysoul",
+        categorie: "graphisme",
+        type: "PROFESSIONNEL", 
+        annee: "2025",
+       description: "<b>CONTEXTE ET OBJECTIFS</b><br>Dans le cadre du lancement de Bullysoul, une nouvelle marque d'accessoires en crochet, j'ai eu la responsabilité de concevoir l'identité visuelle promotionnelle du projet. L'objectif était de créer un univers graphique fort et cohérent pour accompagner la sortie des produits, en mêlant esthétique artisanale et codes visuels modernes.<br><br><b>RÉALISATIONS MÉTIERS</b><br>Pour donner vie à cette campagne, j'ai assuré la direction artistique globale du projet, de la pré-production à la post-production. J'ai d'abord organisé et supervisé le shooting photo, en dirigeant le posing pour mettre en valeur les créations.<br><br>Une fois les images capturées, j'ai collaboré étroitement avec un collègue chargé des retouches techniques. À partir de ces visuels, j'ai conçu une série d'affiches promotionnelles en utilisant des techniques de photomontage pour créer un impact visuel immédiat. En parallèle, j'ai réalisé une refonte du logo en 3D, ajoutant une dimension de profondeur et de modernité à l'identité de la marque, afin qu'il s'intègre parfaitement aux différents supports de communication.<br><br><b>BILAN ET SAVOIR-ÊTRE</b><br>Ce projet a marqué ma première véritable expérience en tant que Directeur Artistique. Il m'a permis de développer des compétences clés en gestion d'équipe et en coordination de projet. J'ai appris à orchestrer les talents de chacun et à respecter des délais stricts, tout en garantissant une vision artistique cohérente du début à la fin de la production.",
+        imagesPrincipales: ["IMAGE/design-graphique/logo-bullysoul.png","IMAGE/design-graphique/affiche-rose.jpg", "IMAGE/design-graphique/affiche-bleu.png", ], 
+        competences: ["photographie"],
+        outils: ["photoshop", "illustrator", "Lightroom"],
+        galerie: ["IMAGE/design-graphique/affiche-rose.jpg", "IMAGE/design-graphique/affiche-bleu.png"]
+    }
+
 };
 
 function ouvrirProjet(id) {
