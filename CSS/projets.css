@@ -165,6 +165,31 @@ body {
 .img-tomie { background: url('../IMAGE/UIUXdesign/tomie.jpeg') -100px -123px / 158% 259% no-repeat; }
 .img-302 { background: url('../IMAGE/UIUXdesign/302.png') -70.621px -0.221px / 140.998% 114.914% no-repeat; }
 
+.img-copwear { 
+    /* On centre l'image et on lui dit de tenir entière dans le cadre */
+    background: url('../IMAGE/design-graphique/copwear.png') no-repeat center;
+    background-size: cover; 
+}
+.img-mirror {background: url('../IMAGE/photographie/_imageR.jpg');
+    background-size: cover; 
+    
+    /* 3. On la centre */
+    background-position: center;
+    
+    /* 4. Pas de répétition */
+    background-repeat: no-repeat no-repeat;
+
+} 
+
+
+
+.img-bullysoul { 
+    background: url('../IMAGE/design-graphique/logo-bullysoul.png') no-repeat center;
+    background-size: cover; 
+
+} 
+
+
 /* Style pour l'alignement Titre à gauche / Tags à droite */
 .project-header {
     display: flex;
