@@ -313,7 +313,7 @@ body {
 .info-section {
     display: flex;
     align-items: center; /* Aligne le texte "Compétence :" et les badges */
-    gap: px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
