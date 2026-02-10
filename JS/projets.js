@@ -81,7 +81,7 @@ const dataProjets = {
         imagesPrincipales: ["IMAGE/design-graphique/causette1.png" ], 
         competences: ["Conception Éditoriale", "PAO", "Direction Artistique", "UX"],
         outils: ["photoshop", "Indesign","Illustrator","canon 80d"],
-        galerie: [""]
+        galerie: ["IMAGE/design-graphique/Magazine-final-impression.png", "IMAGE/design-graphique/Magazine-final-impression3.png ", "IMAGE/design-graphique/Magazine-final-impression5.png ", "IMAGE/design-graphique/Magazine-final-impression7.png " ]
     },
 
     'bullysoul': {
