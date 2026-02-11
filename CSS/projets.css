@@ -294,6 +294,36 @@ body {
     margin-top: 10px; /* Ajuste cette valeur pour plus ou moins d'espace */
 }
 
+
+.conteneur-bouton {
+    display: flex;
+    justify-content: flex-end; /* Pour l'aligner à droite */
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.btn-lien {
+    background-color: #4D3053;
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 17px;
+    padding: 10px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-lien:hover {
+    background-color: #6F5774;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
 #detail-galerie {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -641,9 +671,19 @@ body {
         line-height: 1.7;
     }
 
+
+        .conteneur-bouton {
+        order: 4 !important; /* Il se place après le texte (3) */
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Sur mobile, on le centre souvent pour plus de confort */
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
     /* Ordre 4 : Badges */
     .project-specs {
-        order: 4 !important;
+        order: 5 !important;
         width: 100%;
         margin-top: 40px;
         margin-bottom: 50px;
