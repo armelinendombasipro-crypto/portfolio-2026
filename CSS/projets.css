@@ -199,7 +199,11 @@ body {
 } 
 
 
+.img-keys { 
+    background: url('../IMAGE/design-graphique/keys1.png') no-repeat center 5%;
+    background-size: cover; 
 
+} 
 
 /* Style pour l'alignement Titre à gauche / Tags à droite */
 .project-header {
