@@ -62,7 +62,7 @@ const dataProjets = {
         imagesPrincipales: ["IMAGE/UIUXdesign/302.png", "VIDÉO/SAE_302_Gp-E-Film1.mp4", "VIDÉO/SAE_302_Gp-E_film2.mp4" ], 
         competences: ["Réalisation Vidéo", "Montage Audiovisuel", "Communication Sociale", "Travail d'équipe"],
         outils: ["Davinci Resolve", "Caméra"],
-        galerie: ["IMAGE/audiovisuel/302-img2.jpeg", "IMAGE/audiovisuel/302-img3.png", "IMAGE/audiovisuel/302-RS.png"]
+        galerie: ["IMAGE/audiovisuel/302-img2.jpeg", "IMAGE/audiovisuel/302-img3.png", "IMAGE/audiovisuel/302-RS.png",]
     },
 
     'Cop&Wear': {
