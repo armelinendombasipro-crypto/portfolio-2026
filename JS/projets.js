@@ -11,7 +11,7 @@ const dataProjets = {
         urlProjet: "https://indd.adobe.com/view/188e62ae-62bf-478d-b62e-f7b8cd00f9f3",
         outils: ["Indesign", "Photoshop", "Figma"],
     competences: ["Conception Éditoriale", "PAO", "Direction Artistique","Travail d'équipe"],
-        galerie: ["IMAGE/design-graphique/planche-tendanceK.png", "IMAGE/design-graphique/Planche-rechercheK1.png", "IMAGE/design-graphique/Planche-rechercheK2.png","IMAGE/design-graphique/keys2.png","IMAGE/design-graphique/keys3.png", "IMAGE/design-graphique/keys7.png", "IMAGE/design-graphique/keys6.png" ] // Ajoute d'autres images ici
+        galerie: ["IMAGE/design-graphique/planche-tendanceK.png", "IMAGE/design-graphique/Planche-rechercheK1.png", "IMAGE/design-graphique/Planche-rechercheK2.png", "IMAGE/design-graphique/coffret.png" ,"IMAGE/design-graphique/keys2.png","IMAGE/design-graphique/keys3.png", "IMAGE/design-graphique/keys7.png", "IMAGE/design-graphique/keys6.png" ] // Ajoute d'autres images ici
         
     },
 
