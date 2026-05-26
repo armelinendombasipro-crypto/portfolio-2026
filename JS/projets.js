@@ -72,6 +72,8 @@ const dataProjets = {
         annee: "2025",
         description: "<b>CONTEXTE ET OBJECTIFS</b><br>Né de la rencontre de 6 esprits créatifs à l'IUT de Bobigny en 2024, Cop&Wear est un concept store international et nomade dédié à la promotion de créateurs et de marques indépendantes émergentes à travers le monde. L'objectif principal de ce projet de fin d'études était de concevoir l'écosystème de communication complet d'une boutique éphémère (pop-up store) exclusive, offrant une plateforme globale aux jeunes talents internationaux (Europe, Asie, Afrique, Amérique) pour leur permettre de toucher un large public hors des grandes enseignes, sous le slogan fort : <i>« La mode sans frontière »</i>.<br><br><b>RÉALISATIONS MÉTIERS</b><br>Au sein de cette agence étudiante, j'ai assumé un rôle central en prenant en charge l'intégralité de la <b>Direction Artistique</b>, de la <b>charte graphique</b> et de la <b>production audiovisuelle</b>, tout en rédigeant une grande partie du cahier des charges stratégique.<br><br>J'ai conçu l'identité visuelle de la marque à travers son logotype : un grand esperluette ('&') texturé façon denim symbolisant l'univers textile, associé à une typographie à empattements élégante bleu roi. Côté com', j'ai réalisé les affiches publicitaires événementielles ainsi que les maquettes du site vitrine multilingue sur Figma. J'ai également entièrement scénarisé et monté le film publicitaire (Teaser/Trailer) destiné à créer la <i>hype</i> sur TikTok et Instagram, en adoptant un ton authentique, engagé et proche des communautés urbaines, parfaitement aligné avec le slogan de la marque : <i>« You see it, you cop it »</i>.<br><br><b>BILAN ET SAVOIR-ÊTRE</b><br>Ce projet d'envergure, estimé à un budget théorique de 38 350 € HT, m'a permis de valider des compétences pointues en gestion de projet, en logistique événementielle et en stratégie de communication de marque (gestion des RP, rédaction de communiqués de presse). Travailler en équipe sur un rétroplanning serré de plusieurs mois a renforcé mon autonomie et ma capacité à traduire un concept marketing complexe en un univers visuel fort, cohérent et immédiatement identifiable.",
         imagesPrincipales: ["IMAGE/design-graphique/copwear.png", "VIDÉO/PUB_Finale_SAE202.mp4"],
+        carousselPrefixe: "IMAGE/design-graphique/Cop&Wear-page",
+        carousselTotalPages: 16,
         competences: [ "Direction artistique", "Chef de projet"],
         outils: [ "Photoshop" ,"Illistrator"],
         galerie: ["IMAGE/design-graphique/copwear.png" ]
@@ -205,6 +207,68 @@ function ouvrirProjet(id) {
                 }
             });
         }
+      
+// --- CARROUSEL CHARTE GRAPHIQUE (optionnel) ---
+  if (projet.carousselPrefixe && projet.carousselTotalPages > 0) {
+    let currentIndex = 0;
+    const totalImages = projet.carousselTotalPages;
+
+    const wrapperCarrousel = document.createElement('div');
+    wrapperCarrousel.style.cssText = "border: 1.5px solid #4D3053; border-radius: 22px; width: 100%; height: 500px; overflow: hidden; background-color: #fff; display: flex; flex-direction: column; margin-bottom: 40px;";
+
+    const zoneImage = document.createElement('div');
+    zoneImage.style.cssText = "flex: 1; display: flex; justify-content: center; align-items: center;";
+
+    for (let i = 1; i <= totalImages; i++) {
+        const img = document.createElement('img');
+        img.src = `${projet.carousselPrefixe}${i}.jpg`;
+        img.style.cssText = "max-height: 100%; max-width: 95%; object-fit: contain; display: block; margin: auto; padding: 20px 0";
+        img.style.display = (i === 1) ? "block" : "none";
+        img.className = "carousel-page-slide";
+        zoneImage.appendChild(img);
+    }
+
+    const navCarrousel = document.createElement('div');
+    navCarrousel.style.cssText = "display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; border-top: 1px solid rgba(77, 48, 83, 0.2); background-color: #DBDBDB; flex-shrink: 0;";
+    navCarrousel.innerHTML = `
+        <button id="prev-btn" style="background:transparent; color:#4D3053; border:1.5px solid #4D3053; border-radius:30px; padding:8px 22px; cursor:pointer; font-size:0.9rem; transition: all 0.2s;">❮ Précédent</button>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 3px;">
+            <span style="font-family: 'DM Serif Display', serif; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; color: #4D3053; font-weight: bold;">Charte Graphique</span>
+            <span id="carousel-index" style="font-family: 'DM Serif Display', serif; font-weight: bold; color: #4D3053; font-size: 1.1rem;">1 / ${totalImages}</span>
+        </div>
+        <button id="next-btn" style="background:transparent; color:#4D3053; border:1.5px solid #4D3053; border-radius:30px; padding:8px 22px; cursor:pointer; font-size:0.9rem; transition: all 0.2s;">Suivant ❯</button>
+    `;
+
+    wrapperCarrousel.appendChild(zoneImage);
+    wrapperCarrousel.appendChild(navCarrousel);
+    containerImages.appendChild(wrapperCarrousel);
+
+    const prevBtn = navCarrousel.querySelector('#prev-btn');
+    const nextBtn = navCarrousel.querySelector('#next-btn');
+    const indexLabel = navCarrousel.querySelector('#carousel-index');
+
+    // Hover sur les boutons
+    [prevBtn, nextBtn].forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            btn.style.background = '#4D3053';
+            btn.style.color = '#fff';
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.background = 'transparent';
+            btn.style.color = '#4D3053';
+        });
+    });
+
+    const updateCarousel = () => {
+        zoneImage.querySelectorAll('.carousel-page-slide').forEach((slide, idx) => {
+            slide.style.display = (idx === currentIndex) ? "block" : "none";
+        });
+        if (indexLabel) indexLabel.innerText = `${currentIndex + 1} / ${totalImages}`;
+    };
+
+    nextBtn.onclick = () => { currentIndex = (currentIndex + 1) % totalImages; updateCarousel(); };
+    prevBtn.onclick = () => { currentIndex = (currentIndex - 1 + totalImages) % totalImages; updateCarousel(); };
+}
 
        // --- GALERIE ---
        if (projet.galerie && galerieDiv) {
