@@ -206,9 +206,9 @@ body {
 } 
 
 
-.kcompany { 
-    background: url('../IMAGE/design-graphique/keys1.png') no-repeat center;
-    background-size: contain; /* Indispensable pour que le logo s'ajuste à la carte ! */
+.img-kcompany { 
+    background: url('../IMAGE/design-graphique/KibulasCompany-Logo.png') no-repeat center;
+    background-size: cover; /* Indispensable pour que le logo s'ajuste à la carte ! */
 }
 
 /* Style pour l'alignement Titre à gauche / Tags à droite */
