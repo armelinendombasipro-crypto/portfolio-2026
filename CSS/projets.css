@@ -205,6 +205,11 @@ body {
 
 } 
 
+
+.kcompany { 
+    background: url('../IMAGE/design-graphique/KibulasCompany-Logo.png') no-repeat center;   
+}
+
 /* Style pour l'alignement Titre à gauche / Tags à droite */
 .project-header {
     display: flex;
