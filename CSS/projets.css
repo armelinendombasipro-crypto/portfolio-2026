@@ -211,6 +211,12 @@ body {
     background-size: cover; /* Indispensable pour que le logo s'ajuste à la carte ! */
 }
 
+.img-slowgalerie { 
+    background: url('../IMAGE/design-graphique/slow-logo.png') no-repeat center;
+    background-size: cover; 
+
+} 
+
 /* Style pour l'alignement Titre à gauche / Tags à droite */
 .project-header {
     display: flex;
