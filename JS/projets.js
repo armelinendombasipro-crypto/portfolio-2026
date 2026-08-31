@@ -308,29 +308,46 @@ function ouvrirProjet(id) {
     prevBtn.onclick = () => { currentIndex = (currentIndex - 1 + totalImages) % totalImages; updateCarousel(); };
 }
 
-       // --- GALERIE ---
-       if (projet.galerie && galerieDiv) {
-        galerieDiv.innerHTML = ""; // On vide la galerie aussi
-        projet.galerie.forEach(url => {
+      // --- GALERIE (Images + Vidéos) ---
+if (projet.galerie && galerieDiv) {
+    galerieDiv.innerHTML = ""; // On vide la galerie
+    
+    projet.galerie.forEach(url => {
+        // On vérifie que l'URL n'est pas vide
+        if (!url || url.trim() === "") return;
+
+        if (url.endsWith('.mp4') || url.endsWith('.webm')) {
+            // 🎬 Si c'est une VIDÉO
+            const video = document.createElement('video');
+            video.src = url;
+            video.controls = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.className = "galerie-img"; // Garde le même style/taille que les images
+            video.style.width = "100%";
+            video.style.borderRadius = "15px";
+            galerieDiv.appendChild(video);
+        } else {
+            // 🖼️ Si c'est une IMAGE classique (avec Lightbox)
             const img = document.createElement('img');
             img.src = url;
             img.className = "galerie-img";
             
-            // C'est ICI que la magie opère :
-            // On ajoute le clic directement sur l'image quand on la crée.
             img.onclick = function() {
                 const lightbox = document.getElementById('lightbox');
                 const lightboxImg = document.getElementById('lightbox-img');
                 
                 if(lightbox && lightboxImg) {
-                    lightboxImg.src = this.src; // On met l'image en grand
-                    lightbox.style.display = 'flex'; // On affiche la boîte noire
+                    lightboxImg.src = this.src;
+                    lightbox.style.display = 'flex';
                 }
             };
 
             galerieDiv.appendChild(img);
-        });
-    }
+        }
+    });
+}
 
         // AJOUT DU FIGMA : On l'ajoute à la suite des images
         if(projet.figmaUrl) {
