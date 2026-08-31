@@ -22,7 +22,7 @@ const dataProjets = {
         imagesPrincipales:[ "VIDÉO/V2-final-c.mp4", "VIDÉO/Atelier-2.mp4"],
         outils: ["Premiere pro"],
     competences: ["montage vidéo", "scénario", "Direction Artistique",],
-        galerie: ["" ] // Ajoute d'autres images ici
+        galerie: ["VIDÉO/Paul1.mp4", "VIDÉO/mur.mp4", "VIDÉO/3s.mp4", "VIDÉO/RNRSuicide.mp4"] // Ajoute d'autres images ici
         
     },
 
