@@ -96,7 +96,7 @@ html { scroll-behavior: smooth; } /* Pour que la page descende doucement */
 .search-status-box p {
     color: #ffffff; /* Ton violet foncé pour la lisibilité */
     font-family: 'DM Serif Display', serif;
-    font-size: 3rem;
+    font-size: 2.1rem;
     margin: 0;
 }
 
