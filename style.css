@@ -96,14 +96,13 @@ html { scroll-behavior: smooth; } /* Pour que la page descende doucement */
 .search-status-box p {
     color: #ffffff; /* Ton violet foncé pour la lisibilité */
     font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem;
+    font-size: 3rem;
     margin: 0;
     line-height: 1.4;
 }
 
 .search-status-box strong {
     color: #ffffff;
-    text-decoration: underline; /* Pour faire ressortir les dates */
 }
 
 .btn-cv-status {
